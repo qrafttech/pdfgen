@@ -2,7 +2,7 @@ import express from "express";
 import generate from "./generate";
 const app = express();
 app.use(express.json());
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const router = express.Router();
 app.use("/api/v1", router);
