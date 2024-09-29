@@ -1,15 +1,15 @@
-# pdfly
+# Pdfgen
 
-To install dependencies:
+PDF generation API
 
-```bash
-bun install
+## Usage
+
+Send a POST request to the `/generate` endpoint with a JSON body containing the HTML you want to convert to a PDF.
+
+```curl
+curl -X POST "https://pdfgen.so/api/v1/generate" -H "Content-Type: application/json" -d '{"html": "<h1>Hello World</h1>"}'
 ```
 
-To run:
+The response will contain the PDF file.
 
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.1.29. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+> PDFs are generated synchronously and are not saved to disk.

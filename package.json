@@ -1,5 +1,5 @@
 {
-  "name": "pdfly",
+  "name": "pdfgen",
   "module": "index.ts",
   "type": "module",
   "devDependencies": {
