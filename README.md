@@ -4,6 +4,20 @@ PDF generation API
 
 ## Usage
 
+Run the following command to start the server:
+
+```bash
+bun start
+```
+
+To start in development mode, with the server reloading on each file change, run:
+
+```bash
+bun dev
+```
+
+## Generate a PDF
+
 ### Using cURL
 
 Send a POST request to the `/generate` endpoint with a JSON body containing the HTML you want to convert to a PDF.
