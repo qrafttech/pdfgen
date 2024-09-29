@@ -5,8 +5,11 @@ app.use(express.json());
 const port = 3000;
 
 app.post("/generate", async (req, res) => {
-  await generate(req.body.html);
-  res.sendFile(`${__dirname}/example.pdf`);
+  const pdf = await generate(req.body.html);
+
+  res.setHeader("Content-Type", "application/pdf");
+  res.setHeader("Content-Disposition", "attachment; filename=example.pdf");
+  res.send(pdf);
 });
 
 app.listen(port, () => {
