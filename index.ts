@@ -4,7 +4,10 @@ const app = express();
 app.use(express.json());
 const port = 3000;
 
-app.post("/generate", async (req, res) => {
+const router = express.Router();
+app.use("/api/v1", router);
+
+router.post("/generate", async (req, res) => {
   const pdf = await generate(req.body.html);
 
   res.setHeader("Content-Type", "application/pdf");
